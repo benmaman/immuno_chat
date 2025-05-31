@@ -56,12 +56,12 @@ def ask_with_context(history, question, context):
     return response.choices[0].message.content.strip()
 
 
-history=''
-question="does t cell can undergo mutation during prolifireation?'"
-# Get the embedding for the question
-context= retrieve_context(question,5)
-# Search the FAISS index for the top 10 most similar chunks
-ask_with_context(history,question,context)
+# history=''
+# question="how t cell undergo clonal expansion?'"
+# # Get the embedding for the question
+# context= retrieve_context(question,5)
+# # Search the FAISS index for the top 10 most similar chunks
+# ask_with_context(history,question,context)
 
 
 
