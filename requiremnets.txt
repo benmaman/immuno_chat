@@ -1,0 +1,4 @@
+openai>=1.3.5
+streamlit
+faiss-cpu
+numpy
