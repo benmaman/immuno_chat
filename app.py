@@ -36,6 +36,8 @@ def ask_with_context(history, question, context):
 
     full_prompt = f"""
     You are an expert tutor. Use only the context below to answer the question.
+    please try to summmerize the context and answer the question in a concise manner.
+    answer like yo u desribe it for Msc or phd student of immunology.
     Always cite the relevant page numbers. If the answer is not in the context, say shortly that you done know.
 
     Context:
@@ -49,7 +51,7 @@ def ask_with_context(history, question, context):
     """
 
     response = client.chat.completions.create(
-        model="gpt-4.1-nano",
+        model="gpt-4.1-mini",
         messages=[{"role": "user", "content": full_prompt}],
         temperature=0.2,
     )
@@ -68,7 +70,7 @@ def ask_with_context(history, question, context):
 
 # ----------------- STREAMLIT UI -----------------
 st.set_page_config(page_title="📚 Book Chatbot", layout="wide")
-st.title("📖 Chat with Your Immunology Book")
+st.title("📖 Chat with Your Janeway's Immunobiology Book")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
